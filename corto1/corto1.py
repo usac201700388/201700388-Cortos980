@@ -1,11 +1,4 @@
-#Corto1
-def Escribir(Nombre= 'collatz.txt',lista):
-    archivo = open(Nombre,'w') #Abrir para SOBREESCRIBIR el archivo existente
-    archivo.write(str(hora+' --> '+str(i)+'\n'))
-        time.sleep(1)
-
-    archivo.close() #Siempre cerrar el archivo al finalizar la escritura
-    print('Append finalizado')
+#Corto1 
 
 def par_impar(num):
     if(num%2==0):#determinamos si el numero es par 
@@ -15,7 +8,7 @@ def par_impar(num):
 
 Carne = 388
 Secuencia = []
-
+archivo = open('Cortos/corto1/collatz.txt','w') #Abrir para SOBREESCRIBIR el archivo existente
 for i in range(2, Carne):
     Secuencia = []
     j=i
@@ -26,7 +19,7 @@ for i in range(2, Carne):
             j=j/2
         else:
             j=3*j+1
-        Secuencia.append(j)
-        print(Secuencia)
-
+        Secuencia.append(int(j))
+    archivo.write('\n'+ str(Secuencia))
+archivo.close()
 
